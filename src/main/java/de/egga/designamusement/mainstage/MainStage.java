@@ -5,10 +5,12 @@ import java.util.List;
 
 public class MainStage {
 
-    private final ArrayList<Show> shows = new ArrayList<>();
+    private final Clock clock;
     private final MainStageRepository repository;
+    private final ArrayList<Show> shows = new ArrayList<>();
 
-    public MainStage(MainStageRepository repository) {
+    public MainStage(Clock clock, MainStageRepository repository) {
+        this.clock = clock;
         this.repository = repository;
     }
 
@@ -48,6 +50,21 @@ public class MainStage {
         }
 
         return suitableShows;
+    }
+
+    public Show getNextShow() {
+        updateShowsFromRepository();
+
+        Show nextShow = null;
+        for (Show show : shows) {
+            if (show.getTime().isAfter(clock.now())) {
+                if (nextShow == null || show.getTime().isBefore(nextShow.getTime())) {
+                    nextShow = show;
+                }
+            }
+        }
+
+        return nextShow;
     }
 
     private void updateShowsFromRepository() {
