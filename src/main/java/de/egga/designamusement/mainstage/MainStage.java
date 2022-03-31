@@ -13,18 +13,35 @@ public class MainStage {
     }
 
     public List<Show> listAllShows() {
-        List<Show> persistedShows = repository.receive();
-        for (Show persisted : persistedShows) {
-            if (!shows.contains(persisted)) {
-                shows.add(persisted);
-            }
-        }
-
+        updateShowsFromRepository();
         return shows;
     }
 
     public void add(Show newShow) {
         repository.save(newShow);
         shows.add(newShow);
+    }
+
+    public List<Show> listShowsBelow(int affordablePrice) {
+        updateShowsFromRepository();
+
+        ArrayList<Show> affordableShows = new ArrayList<>();
+
+        for (Show show : shows) {
+            if (show.getPrice() <= affordablePrice) {
+                affordableShows.add(show);
+            }
+        }
+
+        return affordableShows;
+    }
+
+    private void updateShowsFromRepository() {
+        List<Show> persistedShows = repository.receive();
+        for (Show persisted : persistedShows) {
+            if (!shows.contains(persisted)) {
+                shows.add(persisted);
+            }
+        }
     }
 }
