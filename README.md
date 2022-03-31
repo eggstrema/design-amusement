@@ -13,7 +13,7 @@ You are lucky to snatch a gig, where you write the middle layer of the backend s
 in the country. Since the hiring process focussed on finding the best candidate available on the market, your position
 has been empty for a little while and the list of desired new features has grown steadily. Management has high hopes
 that you'll be able to overcome the troubles that your predecessors had. Honestly, they were probably not the brightest
-people on the market, who had strong opinions about arbitrary design practices. 
+stars in the sky, who had strong opinions about arbitrary design practices. 
 
 ## Constraints
 Since you inherited the middle layer of the application, you won't have to deal with any external systems, but can
