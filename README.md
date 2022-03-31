@@ -9,7 +9,7 @@ each feature request first in the original design and a second time after refact
 upcoming changes. 
 
 ## Setting the Stage
-You are lucky to snatch a gig, where you write tha middle layer of the backend software for the greatest amusement park
+You are lucky to snatch a gig, where you write the middle layer of the backend software for the greatest amusement park
 in the country. Since the hiring process focussed on finding the best candidate available on the market, your position
 has been empty for a little while and the list of desired new features has grown steadily. Management has high hopes
 that you'll be able to overcome the troubles that your predecessors had. Honestly, they were probably not the brightest
