@@ -36,6 +36,20 @@ public class MainStage {
         return affordableShows;
     }
 
+    public List<Show> listShowsFor(Audience audience) {
+        updateShowsFromRepository();
+
+        ArrayList<Show> suitableShows = new ArrayList<>();
+
+        for (Show show : shows) {
+            if (show.getAudience().equals(audience)) {
+                suitableShows.add(show);
+            }
+        }
+
+        return suitableShows;
+    }
+
     private void updateShowsFromRepository() {
         List<Show> persistedShows = repository.receive();
         for (Show persisted : persistedShows) {
