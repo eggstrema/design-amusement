@@ -8,7 +8,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalTime;
 import java.util.List;
-import java.util.UUID;
 
 import static de.egga.designamusement.mainstage.Audience.*;
 import static java.time.LocalTime.parse;
@@ -24,7 +23,6 @@ public class MainStageTest {
     public static final LocalTime ANY_TIME = parse("16:00:00", ISO_TIME);
     public static final String ANY_TITLE = "Julia & Oscar the Grouch";
     public static final int ANY_PRICE = 20;
-    public static final UUID ANY_UUID = randomUUID();
 
     @Mock
     MainStageRepository repository;
@@ -34,21 +32,21 @@ public class MainStageTest {
 
     @Test
     void new_show_is_contained_in_list_of_all_shows() {
-        Show newShow = new Show(ANY_UUID, ANY_TITLE, ANY_TIME, ANY_PRICE, FAMILIES_WITH_CHILDREN);
+        Show newShow = new Show(randomUUID(), ANY_TITLE, ANY_TIME, ANY_PRICE, FAMILIES_WITH_CHILDREN);
         stage.add(newShow);
         assertThat(stage.listAllShows()).contains(newShow);
     }
 
     @Test
     void new_show_is_persisted_in_repository() {
-        Show newShow = new Show(ANY_UUID, ANY_TITLE, ANY_TIME, ANY_PRICE, FAMILIES_WITH_CHILDREN);
+        Show newShow = new Show(randomUUID(), ANY_TITLE, ANY_TIME, ANY_PRICE, FAMILIES_WITH_CHILDREN);
         stage.add(newShow);
         verify(repository).save(newShow);
     }
 
     @Test
     void list_all_shows_fetches_updates_from_repository() {
-        Show show = new Show(ANY_UUID, ANY_TITLE, ANY_TIME, ANY_PRICE, FAMILIES_WITH_CHILDREN);
+        Show show = new Show(randomUUID(), ANY_TITLE, ANY_TIME, ANY_PRICE, FAMILIES_WITH_CHILDREN);
         when(repository.receive()).thenReturn(List.of(show));
         assertThat(stage.listAllShows()).contains(show);
     }
