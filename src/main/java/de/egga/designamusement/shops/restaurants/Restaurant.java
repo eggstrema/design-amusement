@@ -1,17 +1,12 @@
 package de.egga.designamusement.shops.restaurants;
 
 import de.egga.designamusement.shops.Location;
+import de.egga.designamusement.shops.Shop;
 
-public class Restaurant {
-
-    private final Location location;
+public class Restaurant extends Shop {
 
     public Restaurant(Location location) {
-
-        this.location = location;
+        super(location);
     }
 
-    public Location getLocation() {
-        return location;
-    }
 }

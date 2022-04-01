@@ -1,5 +1,6 @@
 package de.egga.designamusement.shops.nonfood;
 
+import de.egga.designamusement.shops.Location;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -14,26 +15,27 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class NonFoodShopTest {
+class NonFoodShopServiceTest {
 
-    public static final Item ANY_ITEM = new Item(randomUUID(), "any title", CLOTHING, 123);
+    static final Item ANY_ITEM = new Item(randomUUID(), "any title", CLOTHING, 123);
+    static final NonFoodShop ANY_SHOP = new NonFoodShop(new Location(0,0));
 
     @Mock
     StoreRepository repository;
 
     @InjectMocks
-    NonFoodShop shop;
+    NonFoodShopService service;
 
     @Test
     void inStockItemsAreReported() {
-        when(repository.isInStock(ANY_ITEM)).thenReturn(true);
-        assertThat(shop.isInStock(ANY_ITEM)).isTrue();
+        when(repository.isInStock(ANY_SHOP, ANY_ITEM)).thenReturn(true);
+        assertThat(service.isInStock(ANY_SHOP, ANY_ITEM)).isTrue();
     }
 
     @Test
     void soldOutItemsAreReported() {
-        when(repository.isInStock(ANY_ITEM)).thenReturn(false);
-        assertThat(shop.isInStock(ANY_ITEM)).isFalse();
+        when(repository.isInStock(ANY_SHOP, ANY_ITEM)).thenReturn(false);
+        assertThat(service.isInStock(ANY_SHOP, ANY_ITEM)).isFalse();
     }
 
     @Test
@@ -44,7 +46,7 @@ class NonFoodShopTest {
         Item monocle = new Item(randomUUID(), "Count von Count Monocle", ItemTypes.APPARELL, 60);
         Item dress = new Item(randomUUID(), "Prairie Dawn Dress", CLOTHING, 25);
 
-        when(repository.fetchAllItems()).thenReturn(List.of(shirt, wand, onesie, monocle, dress));
-        assertThat(shop.getItemsOf(CLOTHING)).containsExactly(shirt, onesie, dress);
+        when(repository.fetchAllItems(ANY_SHOP)).thenReturn(List.of(shirt, wand, onesie, monocle, dress));
+        assertThat(service.getItemsOf(ANY_SHOP, CLOTHING)).containsExactly(shirt, onesie, dress);
     }
 }
