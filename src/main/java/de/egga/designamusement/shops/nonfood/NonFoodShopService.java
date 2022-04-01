@@ -1,5 +1,8 @@
 package de.egga.designamusement.shops.nonfood;
 
+import de.egga.designamusement.shops.Item;
+import de.egga.designamusement.shops.ItemTypes;
+
 import java.util.ArrayList;
 import java.util.List;
 

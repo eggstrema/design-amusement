@@ -1,5 +1,7 @@
 package de.egga.designamusement.shops.nonfood;
 
+import de.egga.designamusement.shops.Item;
+
 import java.util.List;
 
 public class StoreRepository {

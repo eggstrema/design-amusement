@@ -1,4 +1,4 @@
-package de.egga.designamusement.shops.nonfood;
+package de.egga.designamusement.shops;
 
 import java.util.UUID;
 
