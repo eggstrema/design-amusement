@@ -15,7 +15,7 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class RollerCoasterServiceTest {
 
-    public static final RollerCoaster ANY_ROLLER_COASTER = new RollerCoaster(COUNT_VON_ROUND);
+    static final RollerCoaster ANY_ROLLER_COASTER = new RollerCoaster(COUNT_VON_ROUND);
 
     @Mock
     RollerCoasterRealTimeDataProvider dataProvider;

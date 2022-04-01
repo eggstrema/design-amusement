@@ -16,7 +16,7 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class RestaurantServiceTest {
 
-    public static final Menu ANY_MENU = new Menu();
+    static final Menu ANY_MENU = new Menu();
 
     @Mock
     RestaurantProvider restaurantProvider;

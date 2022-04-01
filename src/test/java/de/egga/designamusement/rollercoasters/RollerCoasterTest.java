@@ -1,8 +1,6 @@
 package de.egga.designamusement.rollercoasters;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 
 import static de.egga.designamusement.rollercoasters.RollerCoasterTypes.COUNT_VON_ROUND;
 import static org.assertj.core.api.Assertions.assertThat;

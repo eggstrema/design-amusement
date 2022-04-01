@@ -20,13 +20,14 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class MainStageTest {
 
-    public static final LocalTime ANY_TIME = parse("16:00:00", ISO_TIME);
-    public static final String ANY_TITLE = "Julia & Oscar the Grouch";
-    public static final int ANY_PRICE = 20;
-    public static final Audience ANY_AUDIENCE = WHOVIANS;
+    static final LocalTime ANY_TIME = parse("16:00:00", ISO_TIME);
+    static final String ANY_TITLE = "Julia & Oscar the Grouch";
+    static final int ANY_PRICE = 20;
+    static final Audience ANY_AUDIENCE = WHOVIANS;
 
     @Mock
     MainStageRepository repository;
+
     @Mock
     Clock clock;
 
