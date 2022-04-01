@@ -1,8 +1,8 @@
 package de.egga.designamusement.shops.nonfood;
 
 import de.egga.designamusement.shops.Item;
+import de.egga.designamusement.shops.ItemTest;
 import de.egga.designamusement.shops.ItemTypes;
-import de.egga.designamusement.shops.Location;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -11,6 +11,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 
+import static de.egga.designamusement.shops.ItemTest.ANY_ITEM;
 import static de.egga.designamusement.shops.ItemTypes.CLOTHING;
 import static de.egga.designamusement.shops.nonfood.NonFoodShopTest.ANY_SHOP;
 import static java.util.UUID.randomUUID;
@@ -19,9 +20,6 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class NonFoodShopServiceTest {
-
-    static final Item ANY_ITEM = new Item(randomUUID(), "any title", CLOTHING, 123);
-
 
     @Mock
     StoreRepository repository;

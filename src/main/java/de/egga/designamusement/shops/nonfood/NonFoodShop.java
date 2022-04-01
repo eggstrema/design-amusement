@@ -7,7 +7,7 @@ import de.egga.designamusement.shops.Shop;
 public class NonFoodShop extends Shop {
 
     public NonFoodShop(Location location) {
-        super(location);
+        super(location, null);
     }
 
     @Override

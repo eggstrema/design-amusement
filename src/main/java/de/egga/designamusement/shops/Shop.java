@@ -7,9 +7,11 @@ public abstract class Shop {
     // deals
 
     final Location location;
+    protected final OrderSystem orderSystem;
 
-    public Shop(Location location) {
+    public Shop(Location location, OrderSystem orderSystem) {
         this.location = location;
+        this.orderSystem = orderSystem;
     }
 
     public abstract void order(Item... items);

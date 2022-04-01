@@ -3,7 +3,7 @@ package de.egga.designamusement.shops.nonfood;
 import de.egga.designamusement.shops.Location;
 import org.junit.jupiter.api.Test;
 
-import static de.egga.designamusement.shops.nonfood.NonFoodShopServiceTest.ANY_ITEM;
+import static de.egga.designamusement.shops.ItemTest.ANY_ITEM;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class NonFoodShopTest {

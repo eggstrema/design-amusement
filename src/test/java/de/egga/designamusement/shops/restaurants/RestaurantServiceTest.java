@@ -37,9 +37,9 @@ public class RestaurantServiceTest {
     @Test
     void finds_closest_restaurant() {
         Location myLocation = new Location(1, 2);
-        Restaurant farAwayRestaurant = new Restaurant(new Location(12, 13));
-        Restaurant someRestaurant = new Restaurant(new Location(5, 6));
-        Restaurant closeRestaurant = new Restaurant(new Location(2, 1));
+        Restaurant farAwayRestaurant = new Restaurant(new Location(12, 13), null);
+        Restaurant someRestaurant = new Restaurant(new Location(5, 6), null);
+        Restaurant closeRestaurant = new Restaurant(new Location(2, 1), null);
         when(restaurantProvider.fetchAllRestaurants()).thenReturn(List.of(farAwayRestaurant, someRestaurant, closeRestaurant));
 
         Restaurant foundRestaurant = service.findClosestRestaurant(myLocation);
