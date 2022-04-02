@@ -6,7 +6,7 @@ public abstract class Shop {
     // cashier report
     // deals
 
-    final Location location;
+    protected final Location location;
     protected final OrderSystem orderSystem;
 
     public Shop(Location location, OrderSystem orderSystem) {
