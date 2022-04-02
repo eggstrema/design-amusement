@@ -10,6 +10,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.List;
 
 import static de.egga.designamusement.shops.restaurants.MenuTest.ANY_MENU;
+import static de.egga.designamusement.shops.restaurants.RestaurantTest.restaurantAt;
 import static de.egga.designamusement.shops.restaurants.RestaurantTypes.SWEDISH_CHEF;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
@@ -35,13 +36,15 @@ public class RestaurantServiceTest {
 
     @Test
     void finds_closest_restaurant() {
-        Location myLocation = new Location(1, 2);
-        Restaurant farAwayRestaurant = new Restaurant(new Location(12, 13), null);
-        Restaurant someRestaurant = new Restaurant(new Location(5, 6), null);
-        Restaurant closeRestaurant = new Restaurant(new Location(2, 1), null);
+        Restaurant farAwayRestaurant = restaurantAt(12, 13);
+        Restaurant someRestaurant = restaurantAt(5, 6);
+        Restaurant closeRestaurant = restaurantAt(2, 1);
         when(restaurantProvider.fetchAllRestaurants()).thenReturn(List.of(farAwayRestaurant, someRestaurant, closeRestaurant));
 
+        Location myLocation = new Location(1, 2);
         Restaurant foundRestaurant = service.findClosestRestaurant(myLocation);
+
         assertThat(foundRestaurant).isEqualTo(closeRestaurant);
     }
+
 }

@@ -28,4 +28,8 @@ class RestaurantTest {
         restaurant.order(ANY_ITEM);
         verify(orderSystem).order(ANY_ITEM);
     }
+
+    static Restaurant restaurantAt(int x, int y) {
+        return new Restaurant(new Location(x, y), null);
+    }
 }
