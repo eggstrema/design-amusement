@@ -9,14 +9,13 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 
+import static de.egga.designamusement.shops.restaurants.MenuTest.ANY_MENU;
 import static de.egga.designamusement.shops.restaurants.RestaurantTypes.SWEDISH_CHEF;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class RestaurantServiceTest {
-
-    static final Menu ANY_MENU = new Menu();
 
     @Mock
     RestaurantProvider restaurantProvider;

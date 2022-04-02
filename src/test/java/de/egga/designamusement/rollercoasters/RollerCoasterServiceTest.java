@@ -8,14 +8,12 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.Duration;
 
-import static de.egga.designamusement.rollercoasters.RollerCoasterTypes.COUNT_VON_ROUND;
+import static de.egga.designamusement.rollercoasters.RollerCoasterTest.ANY_ROLLER_COASTER;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class RollerCoasterServiceTest {
-
-    static final RollerCoaster ANY_ROLLER_COASTER = new RollerCoaster(COUNT_VON_ROUND);
 
     @Mock
     RollerCoasterRealTimeDataProvider dataProvider;

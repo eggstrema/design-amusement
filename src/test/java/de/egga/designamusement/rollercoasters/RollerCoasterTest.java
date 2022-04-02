@@ -7,6 +7,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class RollerCoasterTest {
 
+    public static final RollerCoaster ANY_ROLLER_COASTER = new RollerCoaster(COUNT_VON_ROUND);
+
     @Test
     void type_is_available() {
         RollerCoaster rollerCoaster = new RollerCoaster(COUNT_VON_ROUND);

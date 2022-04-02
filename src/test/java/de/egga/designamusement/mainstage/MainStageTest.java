@@ -6,10 +6,12 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.time.LocalTime;
 import java.util.List;
 
 import static de.egga.designamusement.mainstage.Audience.*;
+import static de.egga.designamusement.mainstage.ShowTest.*;
+import static de.egga.designamusement.mainstage.ShowTest.ANY_TIME;
+import static de.egga.designamusement.mainstage.ShowTest.ANY_TITLE;
 import static java.time.LocalTime.parse;
 import static java.time.format.DateTimeFormatter.ISO_TIME;
 import static java.util.UUID.randomUUID;
@@ -19,11 +21,6 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class MainStageTest {
-
-    static final LocalTime ANY_TIME = parse("16:00:00", ISO_TIME);
-    static final String ANY_TITLE = "Julia & Oscar the Grouch";
-    static final int ANY_PRICE = 20;
-    static final Audience ANY_AUDIENCE = WHOVIANS;
 
     @Mock
     MainStageRepository repository;
